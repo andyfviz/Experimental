@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimationFrame</title>
+    <title>Creative Coding</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
@@ -13,10 +13,58 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="page-title">Hello World!</div>
-    <div id="Button-LightDark">
-        <button id ="Theme">Dark</button>
+    <!--Wireframe: tres columnas-->
+    <div class = "content"> 
+        <!--Izquierda-->
+        <aside class ="sidebar-left">
+            <h3>Estilos</h3>
+            <div id="Button-LightDark">
+                <button id ="Theme">Dark</button>
+            </div>
+        </aside>
+        <!--CENTER-->
+        <main class ="main-content">
+            <div class="page-title">Hello World!</div>
+        </main>
+        <!--RIGHT-->
+        <aside class="sidebar-right">
+            <h3>Interacciones</h3>
+            <div class="placeholder">
+                 <div class="Tarjetas">
+                    <div class ="card">
+                        <div class ="card_img">
+                            <img src = "data/tarjeta_01.jpg" alt="Tarjeta 01">
+                            <button class = "add"> Add</button>
+                        </div>
+                    <div class="card-info">
+                        <h4>Producto 1</h4>
+                        <p>$25</p>
+                    </div>
+                </div>
+                </div>
+                 <div class ="card">
+                    <div class ="card_img">
+                        <img src = "data/tarjeta02.jpg" alt="Tarjeta 02">
+                        <button class = "add"> Add</button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Producto 2</h4>
+                        <p>$30</p>
+                    </div>
+                </div>
+                    <div class ="card">
+                        <div class ="card_img">
+                            <img src = "data/tarjeta03.jpg" alt="Tarjeta 03">
+                            <button class = "add"> Add</button>
+                         </div>
+                    <div class="card-info">
+                        <h4>Producto 3</h4>
+                        <p>$40</p>
+                    </div>
+                </div>
+        </aside>
     </div>
+    
     <script src="main.js"></script>
 </body>
 </html>
