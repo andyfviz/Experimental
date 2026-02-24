@@ -1,6 +1,7 @@
 :root{
     --bg-color: rgb(231,229,204);
     --text-color: rgb(8,94,101);
+    --bg-darker:rgb(172, 171, 148);
 }
 *
     {
@@ -17,6 +18,7 @@ body{
         /*Modo oscuro:*/
 body.dark-mode{
     --bg-color: rgb(8,94,101);
+    --bg-darker: rgb(27, 79, 84);
     --text-color: rgb(231,229,204);
     }
 
@@ -90,41 +92,57 @@ body.dark-mode{
 }
 .Tarjetas{
     display:flex;
-    gap: 40px;
+    gap: 15px;
     overflow-x: auto;
+    overflow-y: visible;
     scroll-snap-type: x mandatory;
     scroll-padding: 50%;
-    padding: 40px 0;
+    padding: 20px 30%;
+    scroll-behavior: smooth;
 }
 .Tarjetas::-webkit-scrollbar {
     display:none;
 }
 .card {
-    flex: 0 0 70%;
+    flex: 0 0 77%;
     max-width: 350px;
     scroll-snap-align: center;
+    position: relative;
     transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0.4;
-    transform: scale(0.77);
-    scroll-behavior: smooth;
+    opacity: 0.3;
+    transform: scale(0.85);
+    background-color:var(--bg-darker);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .card.active {
+    filter: blur(0);
     opacity: 1;
     transform: scale(1);
 }
+
+.card:not(.active) img {
+    filter: blur(3px) brightness(0.7);
+    opacity: 0.4;
+    transform: scale(0.7);
+}
 .card_img {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .card_img img {
     width: 100%;
     display:block;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     transition: transform 0.4s ease;
+    z-index: 1;
 }
 
 .card:hover img {
-    transform: scale(2.1);
+    transform: scale(1.15);
+    z-index: 20;
 }
 .add {
     position: absolute;
@@ -135,12 +153,12 @@ body.dark-mode{
     padding: 8px 16px;
     border: none;
     border-radius: 20px;
-    background: black;
-    color: white;
+    background-color:var(--bg-color);
+    color: var(--text-color);
     cursor: pointer;
     transition: all 0.3s ease;
+    font-family: 'Raleway', sans-serif;
 }
-
 .card:hover .add {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
@@ -148,6 +166,29 @@ body.dark-mode{
 .card-info {
     padding: 15px;
     font-family: 'Raleway', sans-serif;
+    color:var(--text-color);
+}
+
+.pomodoro {
+    text-align: center;
+    font-family:"Righteous", sans-serif;
+    color:var(--text-color);
+    background-color:var(--bg-darker);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+#timer {
+    font-size: 4rem;
+    margin: 20px 0;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-family:"Raleway", sans-serif;
+    color:var(--text-color);
+    background-color:var(--bg-darker);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 /* Responsive*/
