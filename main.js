@@ -61,6 +61,11 @@ const startBtn = document.getElementById("start");
 const resetBtn = document.getElementById("reset");
 const modeLabel = document.getElementById("mode-label");
 const alarm = document.getElementById("alarm");
+const DURATIONS = {
+    work: 25*60,
+    short: 5*60, 
+    long: 15*60
+} 
 
 let timer = null;
 let timeLeft = 1500;
