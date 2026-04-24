@@ -1,3 +1,24 @@
+/**
+ * BACKGROUND
+ */
+const layer = [
+    { el: l1, depth: 0.015 },  // profundidad baja → movimiento mínimo
+    { el: l2, depth: 0.032 },
+    { el: l3, depth: 0.058 },
+    { el: l4, depth: 0.088 },  // profundidad alta → movimiento máximo
+]
+
+screen.addEventListener('mousemove', e => {
+    mouse.x = e.clientX - centerX;
+    mouse.y = e.clientY - centerY;
+})
+function animate() {
+  current.x += (mouse.x - current.x) * 0.07 // lerp → suavizado
+  layer.forEach(({ el, depth }) =>
+    el.style.transform = `translate(${current.x * depth}px, ${current.y * depth}px)`
+  );
+  requestAnimationFrame(animate)
+}
 
 /**
  * RETO 1: CAMBIO DE TEMA 
