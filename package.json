@@ -1,0 +1,26 @@
+{
+  "name": "experimental",
+  "version": "1.0.0",
+  "description": "Mi primer Template para crear pags web sin procesadores ni compiladores",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andyfviz/Experimental.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/andyfviz/Experimental/issues"
+  },
+  "homepage": "https://github.com/andyfviz/Experimental#readme",
+  "dependencies": {
+    "three": "^0.184.0",
+    "vite": "^8.0.10"
+  }
+}
