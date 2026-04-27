@@ -13,35 +13,46 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <!--SECCION 1-->
+    <section class="section-1">
     <!-- BACKGROUND-->
      <div class="scene-wrapper" id="scene">
-        <div class="layer" id="l1"> <!-- SVG 1 → más lejano --> 
+        <div class="bg-noise" aria-hidden="true"></div>
+        <div class="layer" id="l1" data-base-x="0" data-base-y="100"> <!-- SVG 1 → más lejano --> 
             <img src="data/ilustraciones/mountain.svg" style="width:116%; height:116%; object-fit:cover;">
         </div>
-        <div class="layer" id="l2"> <!-- SVG 2 -->
+        <div class="layer" id="l2" data-base-x="0" data-base-y="10"> <!-- SVG 2 -->
             <img src="data/ilustraciones/city.svg" style="width:116%; height:116%; object-fit:cover;">
              </div>
-        <div class="layer" id="l3"> <!-- SVG 3 -->
-            <img src="data/ilustraciones/wheel.svg" style="width:116%; height:116%; object-fit:cover;">
+        <div class="layer" id="l3" data-base-x="0" data-base-y="-200"> <!-- SVG 3 -->
+            <img src="data/ilustraciones/wheel.svg" style="width:100%; height:100%; object-fit:contain;">
              </div>
-        <div class="layer" id="l4"> <!-- SVG 4 → más cercano -->
-            <img src="data/ilustraciones/trees.svg" style="width:116%; height:116%; object-fit:cover;">
+        <div class="layer" id="l4" data-base-x="0" data-base-y="100"> <!-- SVG 4 → más cercano -->
+            <img src="data/ilustraciones/trees.svg" style="width:125%; height:116%; object-fit:cover;">
              </div>
-    <!--Wireframe: tres columnas-->
-        <div class = "content"> 
-            <!--Izquierda-->
-            <aside class ="sidebar-left">
-                <h3>Estilos</h3>
-                <div id="Button-LightDark">
-                    <button id ="Theme">Dark</button>
-                </div>
-            </aside>
-            <!--CENTER-->
-            <main class ="main-content">
-                <div class="page-title">Hello World!</div>
-            </main>
+     <!--Izquierda-->
+      <aside class ="sidebar-left">
+         <h3>Estilos</h3>
+        <div id="Button-LightDark">
+             <button id ="Theme">Dark</button>
+         </div>
+      </aside>
+     <!--CENTER-->
+     <main class ="main-content">
+        <div class="page-title-container">
+         <span class="page-title left">Hello</span>
+         <span class="page-title right">World!</span>
+         </div>
+        </main>
+    </div>
+     </section>
+     <!-- Puente: altura 0 en el flujo; el GIF se superpone a la costura 1↔2 -->
+     <div class="section-bridge" aria-hidden="true">
+       <img class="float-asset a1" src="data/lumi/dancinLUMI.gif" alt="dancing lumi" />
+     </div>
+     <!--SECCION 2-->
+        <section class="section-2">
             <!--RIGHT-->
-            <aside class="sidebar-right">
                 <h3>Interacciones</h3>
                 <div class="Tarjetas">
                     <div class="card">
@@ -84,9 +95,7 @@
                 </div>
                 </div>
                 <audio id="alarm" src="data/old-tune.wav"></audio>
-            </aside>
-     </div>
-    </div>
+        </section>
     
     <script src="main.js"></script>
 </body>
