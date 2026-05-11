@@ -44,12 +44,11 @@
   }
   
   /* ================================
-     SECCIÓN 1 — HERO (BG + 2 cols)
+     SECCIÓN 1 — MAIN (BG + 2 cols)
      ================================ */
   .section-1 {
     position: relative;
     height: 100vh;
-    /* contenido principal vertical; sidebar se posiciona como lateral */
     display: block;
     overflow: hidden;
   }
@@ -174,34 +173,132 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.35em;
+    gap: 0.15em;
     flex-wrap: wrap;
     font-size: clamp(2.5rem, 10vw, 7rem);
     overflow: visible;
     color: var(--text-color);
+    animation: title-slide-in-left 0.77s cubic-bezier(0.22, 1, 0.36, 1) both, 
+    lights 5s 750ms linear infinite;
     transition: color 0.5s ease;
     border-radius: 20px;
   }
-
+  .page-title-container:hover .page-title {
+    animation: lights 8s linear infinite !important;
+  }
   /* Coincide con el HTML: .page-title.left / .page-title.right */
   .page-title-container .page-title {
     display: inline-block;
     white-space: nowrap;
   }
   .page-title-container .page-title.left {
-    animation: title-slide-in-left 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: title-slide-in-left 3.3s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .page-title-container .page-title.right {
-    animation: title-slide-in-right 1s cubic-bezier(0.22, 1, 0.36, 1) 0.77s both;
+    animation: title-slide-in-right 3.3s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+
   }
 
   @keyframes title-slide-in-left {
-    from { opacity: 0; transform: translateX(-60%); }
+    from { opacity: 0; transform: translateX(-50%); }
     to   { opacity: 1; transform: translateX(0); }
   }
+  @keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+  }
+
   @keyframes title-slide-in-right {
     from { opacity: 0; transform: translateX(60%); }
     to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes lights {
+    0% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
+    
+    30% { 
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    40% { 
+      color: hsl(230, 100%, 95%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 90%, 0.5),
+        -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+        0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    70% {
+      color: hsl(230, 80%, 90%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.5),
+        0 0 0.125em hsla(320, 100%, 60%, 0.5),
+        0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+        -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+    }
+    
+    100% {
+      color: hsl(230, 40%, 80%);
+      text-shadow:
+        0 0 1em hsla(320, 100%, 50%, 0.2),
+        0 0 0.125em hsla(320, 100%, 60%, 0.3),
+        1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+        -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+    }
   }
   /* Botón tema */
   #Theme {
@@ -227,11 +324,18 @@
     position: absolute;
     left: 50%;
     top: 0;
-    transform: translate(-432%, -70%);
-    width: min(220px, 40vw);
+    /* Centrado real: -50% mantiene el asset dentro del viewport */
+    transform: translate(-50%, clamp(-95%, -70%, -35%));
+    width: clamp(120px, 22vw, 220px);
     height: auto;
     will-change: transform;
     pointer-events: none;
+  }
+  @media (max-width: 520px) {
+    .section-bridge .float-asset {
+      transform: translate(-50%, -40%);
+      width: clamp(110px, 32vw, 180px);
+    }
   }
   /* ================================
      SECCIÓN 2 — CARDS + POMODORO
